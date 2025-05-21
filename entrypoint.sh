@@ -27,4 +27,4 @@ docker_run="$docker_run --network solr -d -p $INPUT_HOST_PORT:$INPUT_CONTAINER_P
 
 sh -c "$docker_run"
 
-docker run --network solr --rm curlimages/curl --max-time 120 --retry 120 --retry-delay 1 --retry-connrefused --show-error --silent http://localhost:8983
+docker run --network solr --rm curlimages/curl --max-time 120 --retry 120 --retry-delay 1 --retry-connrefused --show-error --silent http://localhost:$INPUT_HOST_PORT
