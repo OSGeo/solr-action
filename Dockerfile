@@ -19,9 +19,8 @@
 #
 ###############################################################################
 
-FROM docker.io/library/solr:latest
-WORKDIR /var/solr
+FROM docker:stable
 
-# COPY entrypoint.sh /entrypoint.sh
-# RUN chmod +x /entrypoint.sh
-# ENTRYPOINT ["/entrypoint.sh"]
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
