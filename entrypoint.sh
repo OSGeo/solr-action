@@ -23,8 +23,8 @@
 docker network create solr
 
 docker_run="docker run"
-docker_run="$docker_run --network solr -d -p $INPUT_HOST_PORT:$INPUT_CONTAINER_PORT solr:$INPUT_SOLR_VERSION"
+docker_run="$docker_run --name solr1 --network solr -d -p $INPUT_HOST_PORT:$INPUT_CONTAINER_PORT solr:$INPUT_SOLR_VERSION"
 
 sh -c "$docker_run"
 
-docker run --network solr --rm curlimages/curl --max-time 120 --retry 120 --retry-delay 1 --retry-connrefused --show-error --silent http://localhost:$INPUT_HOST_PORT
+docker run --network solr --rm curlimages/curl --max-time 120 --retry 120 --retry-delay 1 --retry-connrefused --show-error --silent http://solr1:$INPUT_HOST_PORT
