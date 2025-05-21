@@ -16,4 +16,4 @@ jobs:
         host_port: 8983
         container_port: 8983
     - name: check whether Solr is running
-      run: curl http://localhost:8983/solr
+      run: curl -v http://localhost:8983/solr
