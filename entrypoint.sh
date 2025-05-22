@@ -24,7 +24,7 @@ docker network create solr
 # Download the latest JTS library (version 1.20.0)
 JTS_DOWNLOAD_URL="https://repo1.maven.org/maven2/org/locationtech/jts/jts-core/1.20.0/jts-core-1.20.0.jar"
 JTS_JAR_PATH="/tmp/jts-core.jar"
-curl -L -o $JTS_JAR_PATH $JTS_DOWNLOAD_URL
+docker run --rm -v /tmp:/tmp curlimages/curl -L -o $JTS_JAR_PATH $JTS_DOWNLOAD_URL 
 
 # Define the docker run command with volume mounting for the JTS library
 docker_run="docker run"
