@@ -33,5 +33,5 @@ docker_run="$docker_run -v $JTS_JAR_PATH:/opt/solr/server/solr-webapp/webapp/WEB
 docker_run="$docker_run solr:$INPUT_SOLR_VERSION solr-precreate test"
 
 sh -c "$docker_run"
-
+sleep 20
 docker run --network solr --rm curlimages/curl -v --max-time 120 --retry 120 --retry-delay 1 --retry-connrefused --show-error --silent http://solr1:$INPUT_HOST_PORT
