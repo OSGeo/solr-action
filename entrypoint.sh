@@ -23,7 +23,7 @@
 docker network create solr
 
 docker_run="docker run"
-docker_run="$docker_run --name solr1 --network solr -d -p $INPUT_HOST_PORT:$INPUT_CONTAINER_PORT solr:$INPUT_SOLR_VERSION"
+docker_run="$docker_run --name solr1 --network solr -d -p $INPUT_HOST_PORT:$INPUT_CONTAINER_PORT solr:$INPUT_SOLR_VERSION solr-precreate test"
 
 sh -c "$docker_run"
 
