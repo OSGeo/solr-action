@@ -19,5 +19,5 @@ inputs:
     default: 8983
 
 runs:
-  using: 'docker'
+  using: 'docker' 
   image: 'Dockerfile'
